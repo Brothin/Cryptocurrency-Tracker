@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,29 +9,30 @@
 
     <EditText
         android:id="@+id/idEditSearch"
-        android:layout_width="373dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:hint="Search Cypto Currency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:focusable="auto"
+        android:hint="Search Currency"
+        android:minHeight="48dp"
         android:textColor="#FFFFFF"
-        android:textColorHint="#A3A2A2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColorHint="#838383" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVCurrencies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="85sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_below="@id/idEditSearch"
+        tools:listitem="@layout/currency_rv_item" />
 
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/idRVCurrencies"
-        app:layout_constraintEnd_toStartOf="@+id/idEditSearch" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
